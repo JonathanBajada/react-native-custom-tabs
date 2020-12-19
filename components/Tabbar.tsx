@@ -12,52 +12,52 @@ const tabs = [
 ];
 const {width} = Dimensions.get("window");
 const tabWidth = width / tabs.length;
-const height = 64;
+const height = 70;
 
-
-const tab = shape.line()
-.x(d => d.x)
-.y(d => d.y)
-.curve(shape.curveBasis)
-(
-    [
-        {x: width, y: 0},
-        {x: width + 5, y: 0},
-        {x: width + 10, y: 10},
-        {x: width + 15, y: height},
-        {x: width + tabWidth - 15, y: height},
-        {x: width + tabWidth - 10, y: 10},
-        {x: width + tabWidth - 5, y: 0},
-
-    ]
-)
 const left = shape.line()
     .x( d => d.x)
     .y(d => d.y)
     .curve(shape.curveBasis)([
             {x: 0, y: 0},
-            {x: width, y:0},
+            {x: width , y:0},
+            
     ]);
 
 const right = shape.line()
     .x( d => d.x)
     .y(d => d.y)
     .curve(shape.curveBasis)([
-            {x: width + tabWidth, y:0},
-            {x: width * 2, y: 0},
-            {x: width * 2, y: height},
-            {x:0, y: height},
+            {x: width, y:0},
+            {x: width , y: height},
+            {x: width, y: width},
+            {x:0, y: width},
             {x:0, y: 0}
     ]);
 
-const d = `${left} ${tab} ${right}`;
+const center = shape.line()
+.x(d => d.x)
+.y(d => d.y)
+.curve(shape.curveBasis)
+(
+    [
+        { x: tabWidth * 2, y: 0 },
+        { x: tabWidth * 2 + 5, y: 0 },
+        { x: tabWidth * 2 + 15, y: height * 0.45 },
+        { x: tabWidth * 3 - 15, y: height * 0.45 },
+        { x: tabWidth * 3 - 5, y: 0 },
+        { x: tabWidth * 3, y: 0 },
+
+    ]
+)
+
+const d = `${left} ${center} ${right}`;
 interface TabbarProps {}
 
-export default class Tabbar extends React.PureComponent<TabbarProps> {
+export default class TabShape extends React.PureComponent<TabbarProps> {
 	render() {
         return (
         <>
-             <Svg >
+             <Svg width={width} {...{height}} >
                 <Path {...{d}} fill="white"/>
             </Svg>
             <SafeAreaView style={styles.safeArea}/>
@@ -68,6 +68,7 @@ export default class Tabbar extends React.PureComponent<TabbarProps> {
 
 const styles = StyleSheet.create({
     safeArea : {
-    backgroundColor: 'white'
+    backgroundColor: 'grey'
     }
 })
+
