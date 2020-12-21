@@ -1,28 +1,21 @@
 import * as React from 'react';
 import { View, TouchableWithoutFeedback, StyleSheet, Image } from 'react-native';
 import { Feather as Icon } from '@expo/vector-icons';
-import { TabData } from './TabIcons';
+import { TabData } from './TabData';
+import TabIcon from './TabIcon';
 
-interface Tab {
-	images: {
-		name: string;
-		title: string;
-	};
-}
-
-interface StaticTabbarProps {
-	tabs: Tab[];
-}
-
-export default class StaticTabbar extends React.PureComponent<StaticTabbarProps> {
+export default class StaticTabbar extends React.PureComponent<any> {
 	render() {
-		const { tabs } = this.props;
 		return (
 			<View style={styles.container}>
-				{tabs.map((tabs, index) => (
+				{TabData.map((TabData, index) => (
 					<TouchableWithoutFeedback>
 						<View style={styles.tab}>
-							<Image style={styles.logo} source={require('../images/Clients.png')} />
+							{TabData.name === 'Add' ? (
+								<TabIcon iconStyle={styles.addIcon} url={TabData.link} title={TabData.title} />
+							) : (
+								<TabIcon iconStyle={styles.logo} url={TabData.link} title={TabData.title} />
+							)}
 						</View>
 					</TouchableWithoutFeedback>
 				))}
@@ -40,5 +33,14 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center'
 	},
-	logo: {}
+	logo: {
+		marginTop: 90,
+		height: 24,
+		width: 20
+	},
+	addIcon: {
+		marginTop: 28,
+		height: 70,
+		width: 70
+	}
 });

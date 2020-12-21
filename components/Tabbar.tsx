@@ -4,16 +4,11 @@ import {Svg, Path} from 'react-native-svg';
 import * as shape from 'd3-shape';
 import StaticTabbar from './StaticTabbar'
 
-const tabs = [
-    {name: "grid"},
-    {name: "list"},
-    {name: "refresh-cw"},
-    {name: "refresh-cw"},
-    {name: "user"},
-];
+
+
 const {width} = Dimensions.get("window");
-const tabWidth = width / tabs.length;
-const height = 70;
+const tabWidth = width / 5;
+const height = 80;
 
 const left = shape.line()
     .x( d => d.x)
@@ -41,12 +36,12 @@ const center = shape.line()
 .curve(shape.curveBasis)
 (
     [
-        { x: tabWidth * 2, y: 0 },
-        { x: tabWidth * 2 + 5, y: 0 },
-        { x: tabWidth * 2 + 15, y: height * 0.45 },
-        { x: tabWidth * 3 - 15, y: height * 0.45 },
-        { x: tabWidth * 3 - 5, y: 0 },
-        { x: tabWidth * 3, y: 0 },
+        { x: 100 , y: 0 },
+        { x: 130 , y: 0 },
+        { x: tabWidth * 2 + 10, y: height * 0.63 },
+        { x: tabWidth * 3 - 10, y: height * 0.63 },
+        { x: 230 , y: 0 },
+        { x: 250 , y: 0 },
 
     ]
 )
@@ -59,9 +54,9 @@ export default class TabShape extends React.PureComponent<TabbarProps> {
         return (
         <>
              <Svg width={width} {...{height}} >
-                <Path {...{d}} fill="white"/>
+                <Path {...{d}} fill="#F0F0F0"/>
                 <View>
-                    <StaticTabbar {...{tabs}} />
+                    <StaticTabbar  />
                 </View>
             </Svg>
             <SafeAreaView style={styles.safeArea}/>
