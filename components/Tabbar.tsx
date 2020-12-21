@@ -2,6 +2,7 @@ import * as React from 'react';
 import { View, SafeAreaView, Dimensions, StyleSheet } from 'react-native';
 import {Svg, Path} from 'react-native-svg';
 import * as shape from 'd3-shape';
+import StaticTabbar from './StaticTabbar'
 
 const tabs = [
     {name: "grid"},
@@ -59,6 +60,9 @@ export default class TabShape extends React.PureComponent<TabbarProps> {
         <>
              <Svg width={width} {...{height}} >
                 <Path {...{d}} fill="white"/>
+                <View>
+                    <StaticTabbar {...{tabs}} />
+                </View>
             </Svg>
             <SafeAreaView style={styles.safeArea}/>
         </>

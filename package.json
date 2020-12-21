@@ -8,6 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@react-navigation/native": "^5.8.10",
     "@types/d3-shape": "^2.0.0",
     "d3": "^6.3.1",
     "d3-shape": "^2.0.0",
