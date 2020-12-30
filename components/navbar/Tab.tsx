@@ -31,7 +31,6 @@ const Tab = ({ tab, onPress, icon, color, focused }) => {
 					<Icon style={[ handleStyle(tab.name), {} ]} color={color} name={icon} size={20} />
 				)}
 			</View>
-			{/*<Text style={[ { color }, styles.text ]}>{tab.name === 'Treatment' ? '' : tab.name}</Text>*/}
 		</TouchableOpacity>
 	);
 };
@@ -68,50 +67,3 @@ const styles = StyleSheet.create({
 		marginBottom: Platform.OS === 'ios' ? 10 : 0
 	}
 });
-
-/*style={tab.name === 'Treatment' ? styles.shadow : ''}
-	
-		width: 56,
-		height: 56,
-		marginBottom: 40,
-		borderRadius: 100,
-		overflow: 'hidden',
-		elevation: 4,
-		shadowColor: '#000',
-		shadowOffset: { width: 0, height: 0 },
-		shadowOpacity: 0.1,
-		shadowRadius: 4,
-		position: 'relative'
-	
-	
-	*/
-
-/*
-
-		<View style={styles.container}>
-			<TouchableOpacity onPress={onPress} style={tab.name === 'Treatment' ? styles.shadow : ''}>
-				<View>
-					{tab.name === 'Treatment' ? (
-						<Image style={[ handleStyle(tab.name) ]} source={icon} />
-					) : (
-						<Image style={[ handleStyle(tab.name), { tintColor: focused } ]} source={icon} />
-					)}
-				</View>
-			</TouchableOpacity>
-			<Text style={[ { color }, styles.text ]}>{tab.name === 'Treatment' ? '' : tab.name}</Text>
-		</View>
-
-		*/
-
-/*
-	{
-		tab.name === 'Treatment' ? (
-			<BoxShadow setting={tab.name === 'Treatment' ? shadowOpt : ''}>
-				<Image style={[ handleStyle(tab.name) ]} source={icon} />
-			</BoxShadow>
-		) : (
-			<Image style={[ handleStyle(tab.name), { tintColor: focused } ]} source={icon} />
-		);
-	}
-
-		*/
