@@ -8,21 +8,15 @@ import Tabbar from './Tabbar';
 import Resources from '../../screens/Resources';
 import Treatment from '../../screens/Treatment';
 
-import ClientIMG from '../../images/Clients.png';
-import ExerciseIMG from '../../images/Exercise.png';
-import TreatmentIMG from '../../images/Treatment.png';
-import ToolsIMG from '../../images/ToolsIcon.png';
-import ProfileIconIMG from '../../images/ProfileIcon.png';
-
 const Tab = createBottomTabNavigator();
 const TabNavigator = () => {
 	return (
 		<Tab.Navigator tabBar={(props) => <Tabbar {...props} />}>
-			<Tab.Screen name="Profile" component={Profile} initialParams={{ icon: ProfileIconIMG }} />
-			<Tab.Screen name="Exercises" component={Exercises} initialParams={{ icon: ExerciseIMG }} />
-			<Tab.Screen name="Treatment" component={Treatment} initialParams={{ icon: TreatmentIMG }} />
-			<Tab.Screen name="Clients" component={Clients} initialParams={{ icon: ClientIMG }} />
-			<Tab.Screen name="Resources" component={Resources} initialParams={{ icon: ToolsIMG }} />
+			<Tab.Screen name="Profile" component={Profile} initialParams={{ icon: 'user' }} />
+			<Tab.Screen name="Exercises" component={Exercises} initialParams={{ icon: 'bell' }} />
+			<Tab.Screen name="Treatment" component={Treatment} initialParams={{ icon: 'book-open' }} />
+			<Tab.Screen name="Clients" component={Clients} initialParams={{ icon: 'scissors' }} />
+			<Tab.Screen name="Resources" component={Resources} initialParams={{ icon: 'settings' }} />
 		</Tab.Navigator>
 	);
 };

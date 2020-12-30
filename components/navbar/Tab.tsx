@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 
+import { Feather as Icon } from '@expo/vector-icons';
+
 const Tab = ({ tab, onPress, icon, color, focused }) => {
 	const handleStyle = (name: any) => {
 		if (name === 'Treatment') {
@@ -24,9 +26,9 @@ const Tab = ({ tab, onPress, icon, color, focused }) => {
 		<TouchableOpacity onPress={onPress} style={styles.container}>
 			<View>
 				{tab.name === 'Treatment' ? (
-					<Image style={[ handleStyle(tab.name) ]} source={icon} />
+					<Icon style={handleStyle(tab.name)} name={icon} size={28} />
 				) : (
-					<Image style={[ handleStyle(tab.name), { tintColor: focused } ]} source={icon} />
+					<Icon style={[ handleStyle(tab.name), {} ]} name={icon} size={20} />
 				)}
 			</View>
 			{/*<Text style={[ { color }, styles.text ]}>{tab.name === 'Treatment' ? '' : tab.name}</Text>*/}
@@ -43,31 +45,21 @@ const styles = StyleSheet.create({
 		justifyContent: 'center'
 	},
 	client: {
-		height: 20,
-		width: 16,
 		marginTop: 5,
 		marginBottom: 2
 	},
 	treatment: {
-		height: 56,
-		width: 56,
 		marginBottom: 60
 	},
 	exercises: {
-		height: 20,
-		width: 30,
 		marginTop: 5,
 		marginBottom: 2
 	},
 	resources: {
-		height: 20,
-		width: 20,
 		marginTop: 5,
 		marginBottom: 2
 	},
 	profile: {
-		height: 20,
-		width: 18,
 		marginTop: 5,
 		marginBottom: 2
 	},

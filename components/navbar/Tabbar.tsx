@@ -64,7 +64,7 @@ const Tabbar = ({ state, navigation }) => {
 		<View>
 			<View style={styles.wrapper}>
 				<Svg style={styles.svg} width={width} {...{ height }}>
-					<Path {...{ d }} fill="black" />
+					<Path {...{ d }} fill="grey" />
 				</Svg>
 			</View>
 
