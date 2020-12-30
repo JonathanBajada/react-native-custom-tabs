@@ -46,7 +46,7 @@ const Tabbar = ({ state, navigation }) => {
 			setSelected(activeTab);
 			navigation.navigate(activeTab);
 		}
-		if (state.index !== index && activeTab === 'Exercises') {
+		if (state.index !== index && activeTab === 'Alerts') {
 			setSelected(activeTab);
 			navigation.navigate(activeTab);
 		}
@@ -54,7 +54,7 @@ const Tabbar = ({ state, navigation }) => {
 			setSelected(activeTab);
 			navigation.navigate(activeTab);
 		}
-		if (state.index !== index && activeTab === 'Treatment') {
+		if (state.index !== index && activeTab === 'Bookings') {
 			setSelected(activeTab);
 			navigation.navigate(activeTab);
 		}

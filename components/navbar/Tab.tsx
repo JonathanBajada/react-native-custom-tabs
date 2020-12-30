@@ -5,11 +5,11 @@ import { Feather as Icon } from '@expo/vector-icons';
 
 const Tab = ({ tab, onPress, icon, color, focused }) => {
 	const handleStyle = (name: any) => {
-		if (name === 'Treatment') {
-			return styles.treatment;
+		if (name === 'Bookings') {
+			return styles.bookings;
 		}
-		if (name === 'Exercises') {
-			return styles.exercises;
+		if (name === 'Alerts') {
+			return styles.alerts;
 		}
 		if (name === 'Resources') {
 			return styles.resources;
@@ -25,7 +25,7 @@ const Tab = ({ tab, onPress, icon, color, focused }) => {
 	return (
 		<TouchableOpacity onPress={onPress} style={styles.container}>
 			<View>
-				{tab.name === 'Treatment' ? (
+				{tab.name === 'Bookings' ? (
 					<Icon style={handleStyle(tab.name)} name={icon} size={28} />
 				) : (
 					<Icon style={[ handleStyle(tab.name), {} ]} name={icon} size={20} />
@@ -48,10 +48,10 @@ const styles = StyleSheet.create({
 		marginTop: 5,
 		marginBottom: 2
 	},
-	treatment: {
+	bookings: {
 		marginBottom: 60
 	},
-	exercises: {
+	alerts: {
 		marginTop: 5,
 		marginBottom: 2
 	},

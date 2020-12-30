@@ -2,11 +2,11 @@ import * as React from 'react';
 import { View,Text, Image, StyleSheet } from 'react-native';
 
 
-const Treatment = (props:any) => {
+const Alerts = (props:any) => {
     return (
         <>
             <View style={styles.container} >
-                <Text style={styles.text}>My</Text>
+                <Text style={styles.text}>is</Text>
             </View>
         </>
     )
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default Treatment
+export default Alerts
