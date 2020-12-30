@@ -6,7 +6,7 @@ const Home = (props:any) => {
     return (
         <>
             <View style={styles.container} >
-                <Text style={styles.text}>hello world</Text>
+                <Text style={styles.text}>Tab</Text>
             </View>
         </>
     )
@@ -17,12 +17,12 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'yellow'
+        backgroundColor: 'white'
     },
     text:{
         fontSize: 30,
         fontWeight: 'bold',
-        color: '#fff'
+        color: 'black'
     }
 });
 
