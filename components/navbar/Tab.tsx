@@ -49,9 +49,9 @@ const styles = StyleSheet.create({
 		marginBottom: 2
 	},
 	treatment: {
-		height: 85,
-		width: 85,
-		marginBottom: 80
+		height: 56,
+		width: 56,
+		marginBottom: 60
 	},
 	exercises: {
 		height: 20,
