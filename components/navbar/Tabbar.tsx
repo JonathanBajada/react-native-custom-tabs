@@ -33,8 +33,8 @@ const d = `${left} ${center} ${right}`;
 const Tabbar = ({ state, navigation }) => {
 	const [ selected, setSelected ] = useState('Clients');
 	const { routes } = state;
-	const renderFocus = (currentTab) => (currentTab === selected ? '#31B2B7' : '#9D9D9D');
-	const renderColor = (currentTab) => (currentTab === selected ? '#31B2B7' : '#9D9D9D');
+	const renderFocus = (currentTab) => (currentTab === selected ? 'red' : 'black');
+	const renderColor = (currentTab) => (currentTab === selected ? 'red' : 'black');
 
 	console.log(state.routes[0]);
 	const handlePress = (activeTab, index) => {
@@ -64,7 +64,7 @@ const Tabbar = ({ state, navigation }) => {
 		<View>
 			<View style={styles.wrapper}>
 				<Svg style={styles.svg} width={width} {...{ height }}>
-					<Path {...{ d }} fill="grey" />
+					<Path {...{ d }} fill="#F8F7F7" />
 				</Svg>
 			</View>
 

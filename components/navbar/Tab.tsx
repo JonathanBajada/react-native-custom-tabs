@@ -26,9 +26,9 @@ const Tab = ({ tab, onPress, icon, color, focused }) => {
 		<TouchableOpacity onPress={onPress} style={styles.container}>
 			<View>
 				{tab.name === 'Bookings' ? (
-					<Icon style={handleStyle(tab.name)} name={icon} size={28} />
+					<Icon style={handleStyle(tab.name)} color={color} name={icon} size={28} />
 				) : (
-					<Icon style={[ handleStyle(tab.name), {} ]} name={icon} size={20} />
+					<Icon style={[ handleStyle(tab.name), {} ]} color={color} name={icon} size={20} />
 				)}
 			</View>
 			{/*<Text style={[ { color }, styles.text ]}>{tab.name === 'Treatment' ? '' : tab.name}</Text>*/}
